@@ -25,6 +25,11 @@ return {
 				cmd = { bin_path .. "lua-language-server.cmd" },
 			})
 			lspconfig.tsserver.setup({})
+      lspconfig.pylsp.setup({
+        capabilities = capabilities,
+				on_attach = on_attach,
+				cmd = { bin_path .. "pylsp.cmd" },
+      })
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
